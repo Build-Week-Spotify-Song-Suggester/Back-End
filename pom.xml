@@ -133,10 +133,17 @@
             <version>3.3.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Spotify WEB API (Java) from https://github.com/thelinmichael/spotify-web-api-java -->
+        <dependency>
+            <groupId>se.michaelthelin.spotify</groupId>
+            <artifactId>spotify-web-api-java</artifactId>
+            <version>3.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
-<!--        <finalName>${project.artifactId}</finalName>-->
+        <!-- <finalName>${project.artifactId}</finalName> -->
         <finalName>spotify-song-suggester</finalName>
 
         <plugins>
@@ -164,7 +171,6 @@
                     </processTypes>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
