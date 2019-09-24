@@ -3,15 +3,15 @@ package com.lambdaschool.spotifysongsuggester.services;
 import com.lambdaschool.spotifysongsuggester.models.Track;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface TrackService
 {
 	List<Track> findAll();
 
-//	Track findTrackById(String id);
+//	Track findTrackById(long id);
 
-	Optional<Track> findByName(String name);
+//	Track findByName(long name);
+	Track findByName(String name);
 
 	Track save(Track track);
 

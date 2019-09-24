@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service(value = "trackService")
 public class TrackServiceImpl implements TrackService
@@ -33,12 +32,9 @@ public class TrackServiceImpl implements TrackService
 //	}
 
 	@Override
-	public Optional<Track> findByName(String name)
+	public Track findByName(String name)
 	{
-		Optional<Track> tt = trackrepos.findById(Long.valueOf(name));
-
-//		Optional<Track> tt = trackrepos.findById();
-
+		Track tt = trackrepos.findByTrackid(name);
 
 		if (tt != null)
 		{

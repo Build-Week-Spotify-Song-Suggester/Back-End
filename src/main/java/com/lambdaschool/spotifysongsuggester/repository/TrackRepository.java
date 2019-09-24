@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface TrackRepository extends CrudRepository<Track, Long>
 {
-//	Track findByNameIgnoreCase(String name);
+	Track findByTrackid(String name);
 }
