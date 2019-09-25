@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.lambdaschool.spotifysongsuggester.controllers.UserControllerIntegrationTest
--------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 45.941 s - in com.lambdaschool.spotifysongsuggester.controllers.UserControllerIntegrationTest
