@@ -6,20 +6,21 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "tracks")
+@Table(name = "track_features")
 public class Track extends Auditable
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "track_id")
 	private String trackid;
 
 	@Column(nullable = false,
 			unique = true)
-	private String artistname;
+	private String artist_name;
 
 	@Column(nullable = false,
 			unique = true)
-	private String trackname;
+	private String track_name;
 
 	// many tracks to many users
 //	@ManyToMany
@@ -30,15 +31,24 @@ public class Track extends Auditable
 //	@JsonIgnoreProperties("tracks")
 //	private List<User> users;
 
-	private int acousticness;
-	private int danceability;
-	private int duration;
-	private int energy;
-	private int key;
-	private int liveness;
-	private int loudness;
-	private int tempo;
-	private int valence;
+
+	private float acousticness;
+	private float danceability;
+
+	@Column(name = "duration_ms")
+	private float duration;
+
+	private float energy;
+	private float instrumentalness;
+	private float key;
+	private float liveness;
+	private float loudness;
+	private float mode;
+	private float speechiness;
+	private float tempo;
+	private float time_signature;
+	private float valence;
+	private float popularity;
 
 	// default constructor
 	public Track()
@@ -46,19 +56,28 @@ public class Track extends Auditable
 	}
 
 	// constructor
-	public Track(String artistname, String trackname, int acousticness, int danceability, int duration, int energy, int key, int liveness, int loudness, int tempo, int valence)
+	public Track(String artist_name, String track_name, float acousticness,
+				 float danceability, float duration, float energy,
+				 float instrumentalness, float key, float liveness,
+				 float loudness, float mode, float speechiness, float tempo,
+				 float time_signature, float valence, float popularity)
 	{
-		this.artistname = artistname;
-		this.trackname = trackname;
+		this.artist_name = artist_name;
+		this.track_name = track_name;
 		this.acousticness = acousticness;
 		this.danceability = danceability;
 		this.duration = duration;
 		this.energy = energy;
+		this.instrumentalness = instrumentalness;
 		this.key = key;
 		this.liveness = liveness;
 		this.loudness = loudness;
+		this.mode = mode;
+		this.speechiness = speechiness;
 		this.tempo = tempo;
+		this.time_signature = time_signature;
 		this.valence = valence;
+		this.popularity = popularity;
 	}
 
 	// getters and setters
@@ -67,122 +86,173 @@ public class Track extends Auditable
 		return trackid;
 	}
 
-	public void setTrackid(String trackid)
+	public void setTrackid(String track_id)
 	{
-		this.trackid = trackid;
+		this.trackid = track_id;
 	}
 
-	public String getArtistname()
+	public String getArtist_name()
 	{
-		return artistname;
+		return artist_name;
 	}
 
-	public void setArtistname(String artistname)
+	public void setArtist_name(String artist_name)
 	{
-		this.artistname = artistname;
+		this.artist_name = artist_name;
 	}
 
-	public String getTrackname()
+	public String getTrack_name()
 	{
-		return trackname;
+		return track_name;
 	}
 
-	public void setTrackname(String trackname)
+	public void setTrack_name(String track_name)
 	{
-		this.trackname = trackname;
+		this.track_name = track_name;
 	}
 
-	public int getAcousticness()
+	public float getAcousticness()
 	{
 		return acousticness;
 	}
 
-	public void setAcousticness(int acousticness)
+	public void setAcousticness(float acousticness)
 	{
 		this.acousticness = acousticness;
 	}
 
-	public int getDanceability()
+	public float getDanceability()
 	{
 		return danceability;
 	}
 
-	public void setDanceability(int danceability)
+	public void setDanceability(float danceability)
 	{
 		this.danceability = danceability;
 	}
 
-	public int getDuration()
+	public float getDuration()
 	{
 		return duration;
 	}
 
-	public void setDuration(int duration)
+	public void setDuration(float duration)
 	{
 		this.duration = duration;
 	}
 
-	public int getEnergy()
+	public float getEnergy()
 	{
 		return energy;
 	}
 
-	public void setEnergy(int energy)
+	public void setEnergy(float energy)
 	{
 		this.energy = energy;
 	}
 
-	public int getKey()
+	public float getInstrumentalness()
+	{
+		return instrumentalness;
+	}
+
+	public void setInstrumentalness(float instrumentalness)
+	{
+		this.instrumentalness = instrumentalness;
+	}
+
+	public float getKey()
 	{
 		return key;
 	}
 
-	public void setKey(int key)
+	public void setKey(float key)
 	{
 		this.key = key;
 	}
 
-	public int getLiveness()
+	public float getLiveness()
 	{
 		return liveness;
 	}
 
-	public void setLiveness(int liveness)
+	public void setLiveness(float liveness)
 	{
 		this.liveness = liveness;
 	}
 
-	public int getLoudness()
+	public float getLoudness()
 	{
 		return loudness;
 	}
 
-	public void setLoudness(int loudness)
+	public void setLoudness(float loudness)
 	{
 		this.loudness = loudness;
 	}
 
-	public int getTempo()
+	public float getMode()
+	{
+		return mode;
+	}
+
+	public void setMode(float mode)
+	{
+		this.mode = mode;
+	}
+
+	public float getSpeechiness()
+	{
+		return speechiness;
+	}
+
+	public void setSpeechiness(float speechiness)
+	{
+		this.speechiness = speechiness;
+	}
+
+	public float getTempo()
 	{
 		return tempo;
 	}
 
-	public void setTempo(int tempo)
+	public void setTempo(float tempo)
 	{
 		this.tempo = tempo;
 	}
 
-	public int getValence()
+	public float getTime_signature()
+	{
+		return time_signature;
+	}
+
+	public void setTime_signature(float time_signature)
+	{
+		this.time_signature = time_signature;
+	}
+
+	public float getValence()
 	{
 		return valence;
 	}
 
-	public void setValence(int valence)
+	public void setValence(float valence)
 	{
 		this.valence = valence;
 	}
 
-//	public List<User> getUsers()
+	public float getPopularity()
+	{
+		return popularity;
+	}
+
+	public void setPopularity(float popularity)
+	{
+		this.popularity = popularity;
+	}
+
+
+	//	public List<User> getUsers()
 //	{
 //		return users;
 //	}

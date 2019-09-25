@@ -38,12 +38,6 @@
         </dependency>
 
         <dependency>
-            <groupId>se.michaelthelin.spotify</groupId>
-            <artifactId>spotify-web-api-java</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
@@ -141,11 +135,12 @@
         </dependency>
 
         <!-- Spotify WEB API (Java) from https://github.com/thelinmichael/spotify-web-api-java -->
-        <dependency>
-            <groupId>se.michaelthelin.spotify</groupId>
-            <artifactId>spotify-web-api-java</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>se.michaelthelin.spotify</groupId>-->
+<!--            <artifactId>spotify-web-api-java</artifactId>-->
+<!--            <version>3.0.0</version>-->
+<!--        </dependency>-->
+
     </dependencies>
 
 
