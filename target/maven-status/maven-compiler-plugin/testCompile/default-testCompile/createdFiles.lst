@@ -1,5 +1,3 @@
 com/lambdaschool/spotifysongsuggester/SeedData.class
-com/lambdaschool/spotifysongsuggester/controllers/UserControllerIntegrationTest.class
 com/lambdaschool/spotifysongsuggester/controllers/UserControllerUnitTest.class
-com/lambdaschool/spotifysongsuggester/services/UserServiceImplUnitTest.class
 com/lambdaschool/spotifysongsuggester/SpotifySongSuggesterApplication.class

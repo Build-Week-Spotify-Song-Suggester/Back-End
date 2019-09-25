@@ -8,6 +8,7 @@ The following files have been resolved:
    org.springframework.boot:spring-boot-starter-actuator:jar:2.1.5.RELEASE:compile
    org.springframework.boot:spring-boot-starter-tomcat:jar:2.1.5.RELEASE:compile
    javax.xml.bind:jaxb-api:jar:2.3.1:compile
+   com.fasterxml.jackson.core:jackson-databind:jar:2.9.10:compile
    org.springframework:spring-aspects:jar:5.1.7.RELEASE:compile
    org.glassfish.jaxb:txw2:jar:2.3.1:compile
    org.springframework.security:spring-security-core:jar:5.1.5.RELEASE:compile
@@ -58,7 +59,6 @@ The following files have been resolved:
    org.slf4j:jul-to-slf4j:jar:1.7.26:compile
    net.bytebuddy:byte-buddy:jar:1.9.12:compile
    io.springfox:springfox-spring-web:jar:2.9.2:compile
-   com.fasterxml.jackson.core:jackson-databind:jar:2.9.9:compile
    org.springframework.boot:spring-boot-starter-security:jar:2.1.5.RELEASE:compile
    org.springframework.security:spring-security-web:jar:5.1.5.RELEASE:compile
    org.aspectj:aspectjweaver:jar:1.9.4:compile

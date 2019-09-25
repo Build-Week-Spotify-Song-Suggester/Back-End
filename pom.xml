@@ -38,12 +38,6 @@
         </dependency>
 
         <dependency>
-            <groupId>se.michaelthelin.spotify</groupId>
-            <artifactId>spotify-web-api-java</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
@@ -73,7 +67,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.9</version>
+            <version>2.9.10</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.security.oauth/spring-security-oauth2 -->
@@ -139,6 +133,14 @@
             <version>3.3.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Spotify WEB API (Java) from https://github.com/thelinmichael/spotify-web-api-java -->
+<!--        <dependency>-->
+<!--            <groupId>se.michaelthelin.spotify</groupId>-->
+<!--            <artifactId>spotify-web-api-java</artifactId>-->
+<!--            <version>3.0.0</version>-->
+<!--        </dependency>-->
+
     </dependencies>
 
 
@@ -150,7 +152,7 @@
     </repositories>
 
     <build>
-<!--        <finalName>${project.artifactId}</finalName>-->
+        <!-- <finalName>${project.artifactId}</finalName> -->
         <finalName>spotify-song-suggester</finalName>
 
         <plugins>
@@ -178,7 +180,6 @@
                     </processTypes>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
