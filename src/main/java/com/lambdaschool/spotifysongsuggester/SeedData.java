@@ -1,10 +1,8 @@
 package com.lambdaschool.spotifysongsuggester;
 
-import com.lambdaschool.spotifysongsuggester.models.Role;
-import com.lambdaschool.spotifysongsuggester.models.User;
-import com.lambdaschool.spotifysongsuggester.models.UserRoles;
-import com.lambdaschool.spotifysongsuggester.models.Useremail;
+import com.lambdaschool.spotifysongsuggester.models.*;
 import com.lambdaschool.spotifysongsuggester.services.RoleService;
+import com.lambdaschool.spotifysongsuggester.services.TrackService;
 import com.lambdaschool.spotifysongsuggester.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -22,6 +20,9 @@ public class SeedData implements CommandLineRunner
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    TrackService trackService;
 
     @Override
     public void run(String[] args) throws Exception
@@ -44,7 +45,6 @@ public class SeedData implements CommandLineRunner
           .add(new Useremail(u1, "admin@email.local"));
         u1.getUseremails()
           .add(new Useremail(u1, "admin@mymail.local"));
-
         userService.save(u1);
 
         // data, user

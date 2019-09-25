@@ -24,13 +24,6 @@ public class TrackServiceImpl implements TrackService
 		return list;
 	}
 
-//	@Override
-//	public Track findTrackById(long id)
-//	{
-//		return trackrepos.findById(id)
-//						 .orElseThrow(() -> new ResourceNotFoundException("Track id " + id + " not found!"));
-//	}
-
 	@Override
 	public Track findByName(String name)
 	{
@@ -49,15 +42,49 @@ public class TrackServiceImpl implements TrackService
 	@Override
 	public Track save(Track track)
 	{
-		return null;
+		Track tt = new Track();
+
+		if (track.getTrackid() != null)
+		{
+			tt.setTrackid(tt.getTrackid());
+		}
+
+		if (track.getTrackname() != null)
+		{
+			tt.setTrackname(tt.getTrackname());
+		}
+
+		if (track.getArtistname() != null)
+		{
+			tt.setArtistname(tt.getArtistname());
+		}
+
+		tt.setAcousticness(tt.getAcousticness());
+		tt.setDanceability(tt.getDanceability());
+		tt.setDuration(tt.getDuration());
+		tt.setEnergy(tt.getEnergy());
+		tt.setKey(tt.getKey());
+		tt.setLiveness(tt.getLiveness());
+		tt.setLoudness(tt.getLoudness());
+		tt.setTempo(tt.getTempo());
+		tt.setValence(tt.getValence());
+
+//		edit later - if user faved songs list is empty
+//		if(book.getAuthors().size()>0){
+//			for (Author b : book.getAuthors()){
+//				data.getAuthors().add(b);
+//			}
+//		}
+
+		return trackrepos.save(tt);
 	}
 
-	@Transactional
-	@Override
-	public void delete(long id)
-	{
-		trackrepos.findById(id)
-				 .orElseThrow(() -> new ResourceNotFoundException("Track id " + id + " not found!"));
-		trackrepos.deleteById(id);
-	}
+//	@Transactional
+//	@Override
+//	public void delete(long id)
+//	{
+//		trackrepos.findById(id)
+//				 .orElseThrow(() -> new ResourceNotFoundException("Track id " + id + " not found!"));
+//		trackrepos.deleteById(id);
+//	}
 }

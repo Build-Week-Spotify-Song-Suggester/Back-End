@@ -1,6 +1,9 @@
 package com.lambdaschool.spotifysongsuggester.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tracks")
@@ -17,6 +20,15 @@ public class Track extends Auditable
 	@Column(nullable = false,
 			unique = true)
 	private String trackname;
+
+	// many tracks to many users
+//	@ManyToMany
+//	@JoinTable(name = "wrote",
+//			   joinColumns = {@JoinColumn(name = "trackid")},
+//			   inverseJoinColumns = {@JoinColumn(name = "userid")}
+//	)
+//	@JsonIgnoreProperties("tracks")
+//	private List<User> users;
 
 	private int acousticness;
 	private int danceability;
@@ -169,4 +181,14 @@ public class Track extends Auditable
 	{
 		this.valence = valence;
 	}
+
+//	public List<User> getUsers()
+//	{
+//		return users;
+//	}
+//
+//	public void setUsers(List<User> users)
+//	{
+//		this.users = users;
+//	}
 }

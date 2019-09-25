@@ -30,16 +30,8 @@ public class TrackController
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 
-	// GET - localhost:2019/tracks/track/:id
+	// GET - localhost:2019/tracks/track/:name
 	// get track by trackid
-//	@GetMapping(value = "/track/{id}", produces = {"application/json"})
-//	public ResponseEntity<?> getTrackById(HttpServletRequest request,
-//										  @PathVariable long id)
-//	{
-//		Track t = trackService.findTrackById(id);
-//		return new ResponseEntity<>(t, HttpStatus.OK);
-//	}
-
 	@GetMapping(value = "/track/{name}", produces = {"application/json"})
 	public ResponseEntity<?> getTrackByName(HttpServletRequest request,
 											@PathVariable String name)
@@ -47,17 +39,4 @@ public class TrackController
 		Track tt = trackService.findByName(name);
 		return new ResponseEntity<>(tt, HttpStatus.OK);
 	}
-
-//	@GetMapping(value = "/role/{roleId}",
-//				produces = {"application/json"})
-//	public ResponseEntity<?> getRoleById(HttpServletRequest request,
-//										 @PathVariable
-//												 Long roleId)
-//	{
-//		logger.trace(request.getMethod()
-//							.toUpperCase() + " " + request.getRequestURI() + " accessed");
-//
-//		Role r = roleService.findRoleById(roleId);
-//		return new ResponseEntity<>(r, HttpStatus.OK);
-//	}
 }

@@ -8,12 +8,9 @@ public interface TrackService
 {
 	List<Track> findAll();
 
-//	Track findTrackById(long id);
-
-//	Track findByName(long name);
 	Track findByName(String name);
 
 	Track save(Track track);
 
-	void delete(long id);
+//	void delete(long id);
 }
