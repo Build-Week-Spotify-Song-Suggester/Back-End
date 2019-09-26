@@ -11,7 +11,9 @@ public interface TrackService
 
 	Track findByName(String name);
 
-	Track save(Track track);
+	List<String> findByUserid(long id);
 
-//	void delete(long id);
+	void saveTrack(String trackid, long userid);
+
+	void deleteTrack(String trackid, long userid);
 }

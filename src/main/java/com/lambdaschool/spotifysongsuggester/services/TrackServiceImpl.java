@@ -5,6 +5,7 @@ import com.lambdaschool.spotifysongsuggester.models.Track;
 import com.lambdaschool.spotifysongsuggester.repository.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,58 +40,25 @@ public class TrackServiceImpl implements TrackService
 		}
 	}
 
-	@Transactional
 	@Override
-	public Track save(Track track)
+	public List<String> findByUserid(long id)
 	{
-		Track tt = new Track();
-
-		if (track.getTrackid() != null)
-		{
-			tt.setTrackid(tt.getTrackid());
-		}
-
-		if (track.getTrack_name() != null)
-		{
-			tt.setTrack_name(tt.getTrack_name());
-		}
-
-		if (track.getArtist_name() != null)
-		{
-			tt.setArtist_name(tt.getArtist_name());
-		}
-
-		tt.setAcousticness(tt.getAcousticness());
-		tt.setDanceability(tt.getDanceability());
-		tt.setDuration(tt.getDuration());
-		tt.setEnergy(tt.getEnergy());
-		tt.setInstrumentalness(tt.getInstrumentalness());
-		tt.setKey(tt.getKey());
-		tt.setLiveness(tt.getLiveness());
-		tt.setLoudness(tt.getLoudness());
-		tt.setMode(tt.getMode());
-		tt.setSpeechiness(tt.getSpeechiness());
-		tt.setTempo(tt.getTempo());
-		tt.setTime_signature(tt.getTime_signature());
-		tt.setValence(tt.getValence());
-		tt.setPopularity(tt.getPopularity());
-
-//		edit later - if user faved songs list is empty
-//		if(book.getAuthors().size()>0){
-//			for (Author b : book.getAuthors()){
-//				data.getAuthors().add(b);
-//			}
-//		}
-
-		return trackrepos.save(tt);
+		return trackrepos.findTracksByUserid(id);
 	}
 
-//	@Transactional
-//	@Override
-//	public void delete(long id)
-//	{
-//		trackrepos.findById(id)
-//				 .orElseThrow(() -> new ResourceNotFoundException("Track id " + id + " not found!"));
-//		trackrepos.deleteById(id);
-//	}
+	@Transactional
+	@Modifying
+	@Override
+	public void saveTrack(String trackid, long userid)
+	{
+		trackrepos.saveTrack(trackid, userid);
+	}
+
+	@Transactional
+	@Modifying
+	@Override
+	public void deleteTrack(String trackid, long userid)
+	{
+		trackrepos.deleteTrack(trackid, userid);
+	}
 }
