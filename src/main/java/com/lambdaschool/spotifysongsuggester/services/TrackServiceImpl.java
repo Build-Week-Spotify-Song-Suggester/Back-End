@@ -7,6 +7,7 @@ import com.lambdaschool.spotifysongsuggester.repository.TrackRepository;
 import com.lambdaschool.spotifysongsuggester.view.TrackRecs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -109,9 +110,19 @@ public class TrackServiceImpl implements TrackService
 		return trackrepos.findTracksByUserid(id);
 	}
 
+	@Transactional
+	@Modifying
 	@Override
 	public void saveTrack(String trackid, long userid)
 	{
 		trackrepos.saveTrack(trackid, userid);
+	}
+
+	@Transactional
+	@Modifying
+	@Override
+	public void deleteTrack(String trackid, long userid)
+	{
+		trackrepos.deleteTrack(trackid, userid);
 	}
 }

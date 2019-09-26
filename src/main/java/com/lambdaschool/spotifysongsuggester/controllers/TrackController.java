@@ -95,4 +95,16 @@ public class TrackController
 		trackService.saveTrack(trackid, user.getUserid());
 		return new ResponseEntity<>(null, HttpStatus.CREATED);
 	}
+
+	@DeleteMapping(value = "/remove/{trackid}")
+	public ResponseEntity<?> deleteTrack(@PathVariable String trackid,
+										 Authentication authentication)
+	{
+		// authenticates current user
+		String username = ((UserDetails)(authentication.getPrincipal())).getUsername();
+		User user = userService.findByName(username);
+
+		trackService.deleteTrack(trackid, user.getUserid());
+		return new ResponseEntity<>(null, HttpStatus.OK);
+	}
 }
