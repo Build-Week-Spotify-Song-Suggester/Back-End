@@ -1,5 +1,6 @@
 package com.lambdaschool.spotifysongsuggester.services;
 
+import com.lambdaschool.spotifysongsuggester.models.Recommendations;
 import com.lambdaschool.spotifysongsuggester.models.Track;
 import com.lambdaschool.spotifysongsuggester.models.UserTrack;
 import com.lambdaschool.spotifysongsuggester.view.TrackRecs;

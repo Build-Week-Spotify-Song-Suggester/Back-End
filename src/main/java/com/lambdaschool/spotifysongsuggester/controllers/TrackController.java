@@ -1,10 +1,13 @@
 package com.lambdaschool.spotifysongsuggester.controllers;
 
+import com.lambdaschool.spotifysongsuggester.models.Recommendations;
 import com.lambdaschool.spotifysongsuggester.models.Track;
 import com.lambdaschool.spotifysongsuggester.models.User;
 import com.lambdaschool.spotifysongsuggester.models.UserTrack;
+import com.lambdaschool.spotifysongsuggester.services.RecommendationsService;
 import com.lambdaschool.spotifysongsuggester.services.TrackService;
 import com.lambdaschool.spotifysongsuggester.services.UserService;
+import com.lambdaschool.spotifysongsuggester.utils.Utilities;
 import com.lambdaschool.spotifysongsuggester.view.TrackRecs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -30,6 +33,9 @@ public class TrackController
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private RecommendationsService recommendationsService;
 
 	// GET - localhost:2019/tracks/tracks
 	// get all tracks (testing)
@@ -106,5 +112,21 @@ public class TrackController
 
 		trackService.deleteTrack(trackid, user.getUserid());
 		return new ResponseEntity<>(null, HttpStatus.OK);
+	}
+
+	@GetMapping(value = "/recs/{trackid}", produces = {"application/json"})
+	public ResponseEntity<?> recTrack(@PathVariable String trackid)
+	{
+		Recommendations recs = recommendationsService.findBySuggestedsongid(trackid);
+
+		List<String> list = Utilities.convertToList(recs);
+		List<Track> tracks = new ArrayList<>();
+
+		for (String song : list)
+		{
+			tracks.add(trackService.findByName(song));
+		}
+
+		return new ResponseEntity<>(tracks, HttpStatus.OK);
 	}
 }

@@ -1,6 +1,7 @@
 package com.lambdaschool.spotifysongsuggester.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.context.annotation.Primary;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,7 +12,6 @@ import java.util.List;
 public class Track extends Auditable
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "track_id")
 	private String trackid;
 
