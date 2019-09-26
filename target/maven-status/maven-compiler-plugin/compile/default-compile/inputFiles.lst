@@ -1,3 +1,4 @@
+/Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/view/TrackRecs.java
 /Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/controllers/RolesController.java
 /Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/models/ErrorDetail.java
 /Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/services/TrackServiceImpl.java
@@ -17,6 +18,7 @@
 /Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/controllers/APIsController.java
 /Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/repository/RoleRepository.java
 /Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/models/Auditable.java
+/Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/models/UserTrack.java
 /Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/config/WebConfig.java
 /Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/controllers/OpenController.java
 /Users/VCHOCOU/Desktop/Lambda/Projects/Backend Java/190923 - 190927 Build Week #4/Back-End/src/main/java/com/lambdaschool/spotifysongsuggester/repository/TrackRepository.java

@@ -39,6 +39,8 @@ com/lambdaschool/spotifysongsuggester/services/TrackService.class
 com/lambdaschool/spotifysongsuggester/controllers/LogoutController.class
 com/lambdaschool/spotifysongsuggester/SpotifySongSuggesterApplication.class
 com/lambdaschool/spotifysongsuggester/services/RoleServiceImpl.class
+com/lambdaschool/spotifysongsuggester/models/UserTrack.class
 com/lambdaschool/spotifysongsuggester/repository/TrackRepository.class
 com/lambdaschool/spotifysongsuggester/config/Swagger2Config.class
 com/lambdaschool/spotifysongsuggester/controllers/APIsController$1.class
+com/lambdaschool/spotifysongsuggester/view/TrackRecs.class
