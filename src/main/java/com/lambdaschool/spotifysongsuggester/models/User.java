@@ -27,24 +27,32 @@ public class User extends Auditable
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    // User Roles - one user to many user roles declaration
     @OneToMany(mappedBy = "user",
                cascade = CascadeType.ALL)
     @JsonIgnoreProperties("user")
     private List<UserRoles> userroles = new ArrayList<>();
 
+    // User Emails - one user to many emails declaration
     @OneToMany(mappedBy = "user",
                cascade = CascadeType.ALL,
                orphanRemoval = true)
     @JsonIgnoreProperties("user")
     private List<Useremail> useremails = new ArrayList<>();
 
-//    @OneToMany(mappedBy = "user",
-//               cascade = CascadeType.ALL)
-//    @JsonIgnoreProperties("user")
-
-//    @ManyToMany(mappedBy = "users")
+    // Saved Tracks - many users to many saved tracks
+//    @ManyToMany
+//    @JoinTable(name = "savedsongs",
+//               joinColumns = {@JoinColumn(name = "userid")},
+//               inverseJoinColumns = {@JoinColumn(name = "favoriteid")})
 //    @JsonIgnoreProperties("users")
-//    private List<Track> tracks;
+//    private List<SaveTrack> savetracks = new ArrayList<>();
+
+    // User Tracks - one user to many user tracks declaration
+    @OneToMany(mappedBy = "user",
+               cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("user")
+    private List<UserTrack> usertracks = new ArrayList<>();
 
     public User()
     {
@@ -117,14 +125,14 @@ public class User extends Auditable
         this.useremails = useremails;
     }
 
-//    public List<Track> getTracks()
+//    public List<SaveTrack> getSavetracks()
 //    {
-//        return tracks;
+//        return savetracks;
 //    }
 //
-//    public void setTracks(List<Track> tracks)
+//    public void setSavetracks(List<SaveTrack> savetracks)
 //    {
-//        this.tracks = tracks;
+//        this.savetracks = savetracks;
 //    }
 
     public List<SimpleGrantedAuthority> getAuthority()

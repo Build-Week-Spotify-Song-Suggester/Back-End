@@ -2,7 +2,9 @@ package com.lambdaschool.spotifysongsuggester.services;
 
 import com.lambdaschool.spotifysongsuggester.exceptions.ResourceNotFoundException;
 import com.lambdaschool.spotifysongsuggester.models.Track;
+import com.lambdaschool.spotifysongsuggester.models.UserTrack;
 import com.lambdaschool.spotifysongsuggester.repository.TrackRepository;
+import com.lambdaschool.spotifysongsuggester.view.TrackRecs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -85,6 +87,12 @@ public class TrackServiceImpl implements TrackService
 		return trackrepos.save(tt);
 	}
 
+//	@Override
+//	public ArrayList<TrackRecs> getTrackRecs()
+//	{
+//		return trackrepos.getTrackRecs();
+//	}
+
 //	@Transactional
 //	@Override
 //	public void delete(long id)
@@ -93,4 +101,17 @@ public class TrackServiceImpl implements TrackService
 //				 .orElseThrow(() -> new ResourceNotFoundException("Track id " + id + " not found!"));
 //		trackrepos.deleteById(id);
 //	}
+
+
+	@Override
+	public List<String> findByUserid(long id)
+	{
+		return trackrepos.findTracksByUserid(id);
+	}
+
+	@Override
+	public void saveTrack(String trackid, long userid)
+	{
+		trackrepos.saveTrack(trackid, userid);
+	}
 }
