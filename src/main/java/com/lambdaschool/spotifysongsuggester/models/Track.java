@@ -1,7 +1,6 @@
 package com.lambdaschool.spotifysongsuggester.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.context.annotation.Primary;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,15 +21,6 @@ public class Track extends Auditable
 	@Column(nullable = false,
 			unique = true)
 	private String track_name;
-
-	// many tracks to many users
-//	@ManyToMany
-//	@JoinTable(name = "wrote",
-//			   joinColumns = {@JoinColumn(name = "trackid")},
-//			   inverseJoinColumns = {@JoinColumn(name = "userid")}
-//	)
-//	@JsonIgnoreProperties("tracks")
-//	private List<User> users;
 
 	// User Tracks - one user to many user tracks declaration
 	@OneToMany(mappedBy = "track_features",
@@ -256,15 +246,4 @@ public class Track extends Auditable
 	{
 		this.popularity = popularity;
 	}
-
-
-	//	public List<User> getUsers()
-//	{
-//		return users;
-//	}
-//
-//	public void setUsers(List<User> users)
-//	{
-//		this.users = users;
-//	}
 }

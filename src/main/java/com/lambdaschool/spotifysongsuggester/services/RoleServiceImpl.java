@@ -32,7 +32,6 @@ public class RoleServiceImpl implements RoleService
         return list;
     }
 
-
     @Override
     public Role findRoleById(long id)
     {
@@ -62,7 +61,6 @@ public class RoleServiceImpl implements RoleService
                  .orElseThrow(() -> new ResourceNotFoundException("Role id " + id + " not found!"));
         rolerepos.deleteById(id);
     }
-
 
     @Transactional
     @Override
